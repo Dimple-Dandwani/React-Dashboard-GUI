@@ -10,79 +10,40 @@ import Minimize from '../icons/Minimize.svg';
 import Sheet from '../icons/sheet.svg';
 import Stack from '../icons/stack.svg';
 
-function Sidebar({
-  expanded,
-  setExpanded
-}) {
+const menuItems = [
+  { icon: Home, label: 'Home', isActive: true },
+  { icon: List, label: 'Pre-Requisite' },
+  { icon: Speedometer, label: 'Load Test' },
+  { icon: Security, label: 'Security Test' },
+  { icon: Stack, label: 'Architecture' },
+  { icon: Crown, label: 'Plans' },
+  { icon: Sheet, label: 'Reports' },
+  { icon: Headphones, label: 'Support' },
+];
 
-
+function Sidebar({ expanded, setExpanded }) {
   return (
     <>
       <div className={`icon-container ${expanded ? "full-icon-container" : ""}`}>
         <div className='icon-container-head'>
-
+          {/* Add any header content here */}
         </div>
+
         <div className='icon-container-mid'>
-          <div className={`menu-icon active ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Home}></img>
-            {
-              expanded && <p>Home</p>
-            }
-          </div>
-
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={List}></img>
-            {
-              expanded && <p>Pre-Requisite</p>
-            }
-          </div>
-
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Speedometer}></img>
-            {
-              expanded && <p>Load Test</p>
-            }
-          </div>
-
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Security}></img>
-            {
-              expanded && <p>Security Test</p>
-            }
-          </div>
-
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Stack}></img>
-            {
-              expanded && <p>Architecture</p>
-            }
-          </div>
-
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Crown}></img>
-            {
-              expanded && <p>Plans</p>
-            }
-          </div>
-          
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Sheet}></img>
-            {
-              expanded && <p>Architecture</p>
-            }
-          </div>
-
-          <div className={`menu-icon  ${expanded ? "full-width-icon" : ""}`}>
-            <img src={Headphones}></img>
-            {
-              expanded && <p>Support</p>
-            }
-          </div>
-
+          {menuItems.map(({ icon, label, isActive }, index) => (
+            <div
+              key={index}
+              className={`menu-icon ${isActive ? "active" : ""} ${expanded ? "full-width-icon" : ""}`}
+            >
+              <img src={icon} alt={`${label} Icon`} />
+              {expanded && <p>{label}</p>}
+            </div>
+          ))}
         </div>
+
         <div className="sidebar-toggle-btn">
-          <div className="menu-icon" onClick={()=>setExpanded(!expanded)}>
-            <img src={expanded ? Minimize : Expand} />
+          <div className="menu-icon" onClick={() => setExpanded(!expanded)}>
+            <img src={expanded ? Minimize : Expand} alt="Toggle Icon" />
           </div>
         </div>
       </div>

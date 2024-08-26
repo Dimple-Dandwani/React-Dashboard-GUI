@@ -1,6 +1,6 @@
 import React from 'react';
 import StatCard from './StatCard';
-import TestContainer from './TableContainer.jsx';
+import TableContainer from './TableContainer.jsx';
 
 const Dashboard = () => {
   return (
@@ -10,7 +10,7 @@ const Dashboard = () => {
         <StatCard title="Virtual Users" value1="32" value2="50"  />
         <StatCard title="Minutes Used" value1="30" value2="50" />
       </div>
-      <TestContainer />
+      <TableContainer />
     </div>
   );
 };
