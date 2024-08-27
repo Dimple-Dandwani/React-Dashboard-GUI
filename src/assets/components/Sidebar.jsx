@@ -9,6 +9,8 @@ import Security from '../icons/security.svg';
 import Minimize from '../icons/Minimize.svg';
 import Sheet from '../icons/sheet.svg';
 import Stack from '../icons/stack.svg';
+import Logo from '../icons/Logo.png';
+
 
 const menuItems = [
   { icon: Home, label: 'Home', isActive: true },
@@ -25,8 +27,10 @@ function Sidebar({ expanded, setExpanded }) {
   return (
     <>
       <div className={`icon-container ${expanded ? "full-icon-container" : ""}`}>
+        <div>
+
         <div className='icon-container-head'>
-          {/* Add any header content here */}
+          <img src={Logo} alt={`Label`} />
         </div>
 
         <div className='icon-container-mid'>
@@ -39,6 +43,7 @@ function Sidebar({ expanded, setExpanded }) {
               {expanded && <p>{label}</p>}
             </div>
           ))}
+        </div>
         </div>
 
         <div className="sidebar-toggle-btn">
