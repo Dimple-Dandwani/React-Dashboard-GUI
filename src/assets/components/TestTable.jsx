@@ -25,8 +25,8 @@ const TestTable = () => {
             <tr key={index}>
               <td>{test.name}</td>
               <td>
-                <span className={`chip ${test.status.replace(" ","-").toLowerCase()}`}>
-                • {test.status}
+                <span className={`chip ${test.status.replace(" ", "-").toLowerCase()}`}>
+                  • {test.status}
                 </span>
               </td>
               <td>{test.users}</td>
