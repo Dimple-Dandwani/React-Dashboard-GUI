@@ -14,13 +14,13 @@ import Logo from '../icons/Logo.png';
 
 const menuItems = [
   { icon: Home, label: 'Home', isActive: true },
-  { icon: List, label: 'Pre-Requisite' },
-  { icon: Speedometer, label: 'Load Test' },
-  { icon: Security, label: 'Security Test' },
-  { icon: Stack, label: 'Architecture' },
-  { icon: Crown, label: 'Plans' },
-  { icon: Sheet, label: 'Reports' },
-  { icon: Headphones, label: 'Support' },
+  { icon: List, label: 'Pre-Requisite', isActive: false  },
+  { icon: Speedometer, label: 'Load Test', isActive: false  },
+  { icon: Security, label: 'Security Test', isActive: false  },
+  { icon: Stack, label: 'Architecture', isActive: false  },
+  { icon: Crown, label: 'Plans', isActive: false  },
+  { icon: Sheet, label: 'Reports', isActive: false  },
+  { icon: Headphones, label: 'Support', isActive: false  },
 ];
 
 function Sidebar({ expanded, setExpanded }) {
@@ -38,6 +38,7 @@ function Sidebar({ expanded, setExpanded }) {
             <div
               key={index}
               className={`menu-icon ${isActive ? "active" : ""} ${expanded ? "full-width-icon" : ""}`}
+              onClick={()=>handelClick(label, isActive)}
             >
               <img src={icon} alt={`${label} Icon`} />
               {expanded && <p>{label}</p>}

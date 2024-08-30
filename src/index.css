@@ -11,12 +11,13 @@ body {
   flex: 1;
   background-color: #12141E;
   color: white;
-  padding: 20px;
+  padding: 5px;
   height: 100vh;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   left: 88px;
   overflow-y: auto;
+  width : 97%;
 }
 
 .expanded-main-content {
@@ -120,7 +121,7 @@ body {
   justify-content: space-between;
   padding: 5px 60px;
   background-color: #12141E;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px #404c87cb solid;
 }
 
 .header-right {
@@ -228,7 +229,7 @@ body {
   padding: 10px;
   text-align: left;
   border-radius: 20px;
-  border-bottom: 1px gray solid;
+  border-bottom: 1px #404c87cb solid;
   height: 50px;
   width: 400px;
   color: gray;
@@ -239,7 +240,6 @@ body {
   border-radius: 20px;
   padding: 10px;
   text-align: left;
-  border-bottom: 1px white solid;
   height: 50px;
   width: 400px;
   color: white;
